@@ -1,0 +1,6 @@
+{
+  "appId": "com.cburke.mapr",
+  "appName": "Mapr",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}
