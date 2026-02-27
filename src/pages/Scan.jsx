@@ -1,5 +1,7 @@
 import Title from '../components/Title';
 import ScanButton from '../components/ScanButton';
+import ScanCamera from '../components/ScanCamera';
+import mallMap from '../assets/mall_map.jpg';
 
 export default function Scan() {
   return (
@@ -10,7 +12,9 @@ export default function Scan() {
         <h2 className="text-2xl font-semibold text-center">Scan Map:</h2>
       </div>
       
-      <div className="flex-1 bg-scan-bg"></div>
+      <div className="flex-1 bg-scan-bg">
+        <ScanCamera image={mallMap} />
+      </div>
       
       <div className="bg-scan-bg pb-4 flex justify-center">
         <ScanButton />
