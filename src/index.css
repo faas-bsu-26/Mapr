@@ -1,23 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary colors */
-  --color-primary-light: #4da6ff;
-  --color-primary: #0073e6;
-  --color-primary-dark: #004380;
-  
-  /* Secondary colors */
-  --color-secondary-light: #ffb84d;
-  --color-secondary: #ff9000;
-  --color-secondary-dark: #995600;
-  
-  /* Map-specific colors */
-  --color-map-pin: #ef4444;
-  --color-map-route: #3b82f6;
-  
-  /* Status colors */
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
-  --color-error: #ef4444;
-  --color-info: #3b82f6;
+  --color-title-bg: #fafafa;
+  --color-scan-bg: #5d5d5d;
 }
