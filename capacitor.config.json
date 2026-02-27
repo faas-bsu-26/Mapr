@@ -2,5 +2,11 @@
   "appId": "com.cburke.mapr",
   "appName": "Mapr",
   "webDir": "dist",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": false,
+  "plugins": {
+    "StatusBar": {
+      "backgroundColor": "#fafafa",
+      "style": "LIGHT"
+    }
+  }
 }
