@@ -36,8 +36,10 @@ export default function Save() {
           className="border-2 border-black rounded px-4 py-2 mb-6 w-64 opacity-100 bg-white"
           placeholder="Enter map name"
         />
-        {error && <p className="text-red-500 mb-4">{error}</p>}
         <Button text="Save" onClick={handleSave} />
+        <div className="h-6 mt-4">
+          {error && <p className="text-red-500">{error}</p>}
+        </div>
       </div>
     </div>
   );
