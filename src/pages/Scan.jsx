@@ -12,11 +12,11 @@ export default function Scan() {
         <h2 className="text-2xl font-semibold text-center">Scan Map:</h2>
       </div>
       
-      <div className="flex-1 bg-scan-bg">
+      <div className="flex-1 bg-primary-bg">
         <ScanCamera image={mallMap} />
       </div>
       
-      <div className="bg-scan-bg pb-4 flex justify-center">
+      <div className="bg-primary-bg pb-4 flex justify-center">
         <ScanButton />
       </div>
     </div>

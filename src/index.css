@@ -2,5 +2,6 @@
 
 @theme {
   --color-title-bg: #fafafa;
-  --color-scan-bg: #5d5d5d;
+  --color-primary-bg: #5d5d5d;
+  --color-button: #007bff;
 }
