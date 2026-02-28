@@ -12,9 +12,18 @@ export function MapProvider({ children }) {
     }));
   };
 
+  const deleteMap = (name) => {
+    setMaps((prevMaps) => {
+      const newMaps = { ...prevMaps };
+      delete newMaps[name];
+      return newMaps;
+    });
+  };
+
   const value = {
     maps,
-    addMap
+    addMap,
+    deleteMap
   };
 
   return <MapContext.Provider value={value}>{children}</MapContext.Provider>;
