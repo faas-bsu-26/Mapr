@@ -8,7 +8,7 @@ export default function Scan() {
     <div className="min-h-screen flex flex-col">
       <Title />
       
-      <div className="px-6 py-4 bg-scan-bg">
+      <div className="px-6 py-4 bg-primary-bg">
         <h2 className="text-2xl font-semibold text-center">Scan Map:</h2>
       </div>
       
