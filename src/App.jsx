@@ -1,5 +1,6 @@
-import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Scan from './pages/Scan';
+import Save from './pages/Save';
 
 function App() {
   return (
