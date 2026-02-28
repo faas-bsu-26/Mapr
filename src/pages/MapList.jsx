@@ -24,7 +24,8 @@ export default function MapList() {
       <div className="w-full">
         <Title />
       </div>
-      <div className="flex flex-col gap-1 p-8 w-full max-w-md mx-auto flex-1">
+      <h2 className="text-xl font-semibold text-white px-8 pt-4 text-center">Saved Maps:</h2>
+      <div className="flex flex-col gap-1 p-8 pt-4 w-full max-w-md mx-auto flex-1">
         {Object.entries(maps).reverse().map(([name]) => (
           <div key={name} className="bg-white border-2 border-black rounded px-4 py-3 flex items-center justify-between">
             <p className="text-black font-semibold">{name}</p>
