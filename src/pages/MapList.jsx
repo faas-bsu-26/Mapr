@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Title from '../components/Title';
 import Button from '../components/Button';
@@ -8,6 +8,12 @@ import { MapContext } from '../context/MapContext';
 export default function MapList() {
   const { maps } = useContext(MapContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (Object.keys(maps).length === 0) {
+      navigate('/');
+    }
+  }, [maps, navigate]);
 
   const handleScanNewMap = () => {
     navigate('/');
