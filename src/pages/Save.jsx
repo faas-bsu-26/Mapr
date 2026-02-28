@@ -25,7 +25,7 @@ export default function Save() {
         <Title />
       </div>
       <div className="flex flex-col items-center justify-center flex-1">
-        <h2 className="text-xl font-semibold mb-4">Map Name:</h2>
+        <h2 className="text-xl text-white font-semibold mb-4">Map Name:</h2>
         <input
           type="text"
           value={mapName}

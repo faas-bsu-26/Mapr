@@ -9,7 +9,7 @@ export default function Scan() {
       <Title />
       
       <div className="px-6 py-4 bg-primary-bg">
-        <h2 className="text-2xl font-semibold text-center">Scan Map:</h2>
+        <h2 className="text-2xl text-white font-semibold text-center">Scan Map:</h2>
       </div>
       
       <div className="flex-1 bg-primary-bg">
