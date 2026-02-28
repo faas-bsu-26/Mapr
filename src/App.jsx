@@ -1,10 +1,14 @@
+import { Route } from 'react-router-dom';
 import Scan from './pages/Scan';
 
 function App() {
   return (
     <div className="min-h-screen flex justify-center bg-neutral-200">
       <div className="w-full max-w-107.5 bg-white shadow-2xl">
-        <Scan />
+        <Routes>
+          <Route path="/" element={<Scan />} />
+          <Route path="/save" element={<Save />} />
+        </Routes>
       </div>
     </div>
   );
