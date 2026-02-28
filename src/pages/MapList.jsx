@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Title from '../components/Title';
 import Button from '../components/Button';
+import DeleteButton from '../components/DeleteButton';
 import { MapContext } from '../context/MapContext';
 
 export default function MapList() {
@@ -19,8 +20,9 @@ export default function MapList() {
       </div>
       <div className="flex flex-col gap-1 p-8 w-full max-w-md mx-auto flex-1">
         {Object.entries(maps).reverse().map(([name]) => (
-          <div key={name} className="bg-white border-2 border-black rounded px-4 py-3">
+          <div key={name} className="bg-white border-2 border-black rounded px-4 py-3 flex items-center justify-between">
             <p className="text-black font-semibold">{name}</p>
+            <DeleteButton mapName={name} />
           </div>
         ))}
       </div>
