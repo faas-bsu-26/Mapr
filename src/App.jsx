@@ -3,6 +3,7 @@ import Scan from './pages/Scan';
 import Save from './pages/Save';
 import MapList from './pages/MapList';
 import MapView from './pages/MapView';
+import Settings from './pages/Settings';
 import { MapProvider } from './context/MapContext';
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
             <Route path="/maplist" element={<MapList />} />
             <Route path="/map/:mapName" element={<MapView />} />
             <Route path="/map" element={<MapView />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/settings/:mapName" element={<Settings />} />
           </Routes>
         </div>
       </div>

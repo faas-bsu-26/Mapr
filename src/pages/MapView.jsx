@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { MapPinIcon as MapPinIncon } from '@heroicons/react/24/solid';
+import { MapPinIcon } from '@heroicons/react/24/solid';
+import { Cog6ToothIcon } from '@heroicons/react/16/solid';
 import Title from '../components/Title';
 import { MapContext } from '../context/MapContext';
 
@@ -136,7 +137,7 @@ function bfsPath(grid, gridWidth, gridHeight, start, goal) {
 export default function MapView() {
 	const { mapName } = useParams();
 	const navigate = useNavigate();
-	const { maps } = useContext(MapContext);
+	const { maps, showCompass } = useContext(MapContext);
 	const decodedMapName = mapName ? decodeURIComponent(mapName) : '';
 	const selectedMap = maps[decodedMapName];
 	const imageSrc = selectedMap?.image ? new URL(`../assets/${selectedMap.image}`, import.meta.url).href : '';
@@ -358,14 +359,24 @@ export default function MapView() {
 							alt={`${decodedMapName} map`}
 							className="w-full rounded border-2 border-black cursor-pointer"
 						/>
-						<div className="absolute left-3 bottom-3 w-12 h-12 rounded-full border-2 border-black bg-white/90 text-black pointer-events-none">
-							<div className="absolute left-1/2 top-4 bottom-4 w-px bg-black -translate-x-1/2" />
-							<div className="absolute top-1/2 left-4 right-4 h-px bg-black -translate-y-1/2" />
-							<div className="absolute left-1/2 top-0 -translate-x-1/2 text-[10px] font-bold">N</div>
-							<div className="absolute right-1 top-1/2 -translate-y-1/2 text-[10px] font-bold">E</div>
-							<div className="absolute left-1/2 bottom-0 -translate-x-1/2 text-[10px] font-bold">S</div>
-							<div className="absolute left-1 top-1/2 -translate-y-1/2 text-[10px] font-bold">W</div>
-						</div>
+						<button
+							type="button"
+							onClick={() => navigate(decodedMapName ? `/settings/${encodeURIComponent(decodedMapName)}` : '/settings')}
+							className="absolute right-3 bottom-3 w-10 h-10 rounded-full border-2 border-black bg-white/90 text-black flex items-center justify-center hover:brightness-90 active:brightness-75"
+							aria-label="Settings"
+						>
+							<Cog6ToothIcon className="w-6 h-6" />
+						</button>
+						{showCompass && (
+							<div className="absolute left-3 bottom-3 w-12 h-12 rounded-full border-2 border-black bg-white/90 text-black pointer-events-none">
+								<div className="absolute left-1/2 top-4 bottom-4 w-px bg-black -translate-x-1/2" />
+								<div className="absolute top-1/2 left-4 right-4 h-px bg-black -translate-y-1/2" />
+								<div className="absolute left-1/2 top-0 -translate-x-1/2 text-[10px] font-bold">N</div>
+								<div className="absolute right-1 top-1/2 -translate-y-1/2 text-[10px] font-bold">E</div>
+								<div className="absolute left-1/2 bottom-0 -translate-x-1/2 text-[10px] font-bold">S</div>
+								<div className="absolute left-1 top-1/2 -translate-y-1/2 text-[10px] font-bold">W</div>
+							</div>
+						)}
 						{routePoints.length > 1 && (
 							<svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
 								<polyline
@@ -389,7 +400,7 @@ export default function MapView() {
 							/>
 						)}
 						{destination && (
-							<MapPinIncon
+							<MapPinIcon
 								className="absolute w-5 h-5 text-red-900 pointer-events-none"
 								style={{
 									left: `${destination.percentX}%`,
