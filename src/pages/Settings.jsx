@@ -32,17 +32,19 @@ export default function Settings() {
 			<div className="flex-1 px-6 py-6">
 				<div className="w-full max-w-md mx-auto flex flex-col gap-3">
 					{rows.map((row) => (
-						<div key={row.id} className="bg-white border-2 border-black rounded px-4 py-3 flex items-center justify-between">
+						<button
+							key={row.id}
+							type="button"
+							onClick={() => row.setCommand(!row.value)}
+							className="w-full bg-white border-2 border-black rounded px-4 py-3 flex items-center justify-between cursor-pointer transition hover:brightness-95 active:brightness-90 focus-visible:outline-2 focus-visible:outline-black"
+							aria-label={`Toggle ${row.title}`}
+							aria-pressed={row.value}
+						>
 							<p className="text-black font-semibold">{row.title}</p>
-							<button
-								type="button"
-								onClick={() => row.setCommand(!row.value)}
-								className="w-7 h-7 rounded-full border-2 border-black flex items-center justify-center"
-								aria-label={`Toggle ${row.title}`}
-							>
+							<span className="w-7 h-7 rounded-full border-2 border-black flex items-center justify-center">
 								<span className={`w-4 h-4 rounded-full transition ${row.value ? 'bg-blue-500' : 'bg-transparent'}`} />
-							</button>
-						</div>
+							</span>
+						</button>
 					))}
 				</div>
 			</div>
