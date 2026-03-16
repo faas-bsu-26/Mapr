@@ -8,13 +8,17 @@ export default function Save() {
   const [mapName, setMapName] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-  const { addMap } = useContext(MapContext);
+  const { addMap, maps } = useContext(MapContext);
 
   const handleSave = () => {
-    if (mapName.trim() === '') {
+    const trimmedName = mapName.trim();
+
+    if (trimmedName === '') {
       setError('Please enter a map name');
+    } else if (Object.prototype.hasOwnProperty.call(maps, trimmedName)) {
+      setError('A map with that name already exists');
     } else {
-      addMap(mapName, 'mall_map.jpg');
+      addMap(trimmedName, 'mall_map.jpg');
       navigate('/maplist');
     }
   };
@@ -29,6 +33,7 @@ export default function Save() {
         <input
           type="text"
           value={mapName}
+          autoFocus
           onChange={(e) => {
             setMapName(e.target.value);
             setError('');
