@@ -358,6 +358,14 @@ export default function MapView() {
 							alt={`${decodedMapName} map`}
 							className="w-full rounded border-2 border-black cursor-pointer"
 						/>
+						<div className="absolute left-3 bottom-3 w-12 h-12 rounded-full border-2 border-black bg-white/90 text-black pointer-events-none">
+							<div className="absolute left-1/2 top-4 bottom-4 w-px bg-black -translate-x-1/2" />
+							<div className="absolute top-1/2 left-4 right-4 h-px bg-black -translate-y-1/2" />
+							<div className="absolute left-1/2 top-0 -translate-x-1/2 text-[10px] font-bold">N</div>
+							<div className="absolute right-1 top-1/2 -translate-y-1/2 text-[10px] font-bold">E</div>
+							<div className="absolute left-1/2 bottom-0 -translate-x-1/2 text-[10px] font-bold">S</div>
+							<div className="absolute left-1 top-1/2 -translate-y-1/2 text-[10px] font-bold">W</div>
+						</div>
 						{routePoints.length > 1 && (
 							<svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
 								<polyline
