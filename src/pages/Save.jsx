@@ -34,6 +34,11 @@ export default function Save() {
           type="text"
           value={mapName}
           autoFocus
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleSave();
+            }
+          }}
           onChange={(e) => {
             setMapName(e.target.value);
             setError('');

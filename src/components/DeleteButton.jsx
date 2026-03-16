@@ -4,7 +4,8 @@ import { MapContext } from '../context/MapContext';
 export default function DeleteButton({ mapName }) {
   const { deleteMap } = useContext(MapContext);
 
-  const handleDelete = () => {
+  const handleDelete = (e) => {
+    e.stopPropagation();
     deleteMap(mapName);
   };
 

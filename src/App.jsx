@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Scan from './pages/Scan';
 import Save from './pages/Save';
 import MapList from './pages/MapList';
+import MapView from './pages/MapView';
 import { MapProvider } from './context/MapContext';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
             <Route path="/" element={<Scan />} />
             <Route path="/save" element={<Save />} />
             <Route path="/maplist" element={<MapList />} />
+            <Route path="/map/:mapName" element={<MapView />} />
           </Routes>
         </div>
       </div>
