@@ -8,6 +8,8 @@ export default function MapView() {
 	const navigate = useNavigate();
 	const { maps } = useContext(MapContext);
 	const decodedMapName = mapName ? decodeURIComponent(mapName) : '';
+	const selectedMap = maps[decodedMapName];
+	const imageSrc = selectedMap?.image ? new URL(`../assets/${selectedMap.image}`, import.meta.url).href : '';
 
 	useEffect(() => {
 		if (!decodedMapName || !Object.prototype.hasOwnProperty.call(maps, decodedMapName)) {
@@ -20,9 +22,15 @@ export default function MapView() {
 			<div className="w-full">
 				<Title />
 			</div>
-			<div className="flex flex-col items-center justify-center flex-1 px-6 text-center">
-				<h2 className="text-xl font-semibold text-white mb-3">Map Name</h2>
+			<div className="flex flex-col items-center justify-start flex-1 px-6 py-3 text-center gap-4">
 				<p className="text-2xl font-bold text-white wrap-break-word">{decodedMapName}</p>
+				{imageSrc && (
+					<img
+						src={imageSrc}
+						alt={`${decodedMapName} map`}
+						className="w-full max-w-md rounded border-2 border-black"
+					/>
+				)}
 			</div>
 		</div>
 	);
