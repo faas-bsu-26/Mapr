@@ -350,7 +350,7 @@ export default function MapView() {
 				<Title />
 			</div>
 			<div className="flex flex-col items-center justify-start flex-1 px-6 py-3 text-center gap-4">
-				<p className="text-xl font-bold text-white wrap-break-word">{`${decodedMapName} - ${startPosition ? (destination ? (routeString ?? 'Calculating...') : "Select Destination") : "Select Start Position"}`}</p>
+				<p className="text-xl font-bold text-white wrap-break-word">{`${decodedMapName} - ${startPosition ? (destination ? (routeString ?? 'Calculating...') : "Tap Destination") : "Tap Start Position"}`}</p>
 				{imageSrc && (
 					<div className="relative w-full max-w-md">
 						<img
