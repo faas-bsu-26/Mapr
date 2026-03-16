@@ -5,7 +5,7 @@ export default function Logo() {
   const navigate = useNavigate();
   return (
     <div
-      className="rounded-full overflow-hidden w-12 h-12 cursor-pointer transition hover:brightness-90 active:brightness-75"
+      className="rounded-full overflow-hidden w-12 h-12 cursor-pointer app-pressable-brightness app-transition-fast"
       onClick={() => navigate('/maplist')}
     >
       <img 

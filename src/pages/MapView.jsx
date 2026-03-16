@@ -362,7 +362,7 @@ export default function MapView() {
 						<button
 							type="button"
 							onClick={() => navigate(decodedMapName ? `/settings/${encodeURIComponent(decodedMapName)}` : '/settings')}
-							className="absolute right-3 bottom-3 w-10 h-10 rounded-full border-2 border-black bg-white/90 text-black flex items-center justify-center hover:brightness-90 active:brightness-75"
+							className="absolute right-3 bottom-3 w-10 h-10 rounded-full bg-white/90 text-black flex items-center justify-center app-border-strong app-pressable-brightness app-transition-fast"
 							aria-label="Settings"
 						>
 							<Cog6ToothIcon className="w-6 h-6" />

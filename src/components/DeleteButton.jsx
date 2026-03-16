@@ -12,7 +12,7 @@ export default function DeleteButton({ mapName }) {
   return (
     <button
       onClick={handleDelete}
-      className="bg-red-500 hover:brightness-75 active:brightness-50 text-black font-bold w-8 h-8 flex items-center justify-center rounded border-2 border-black"
+      className="bg-red-500 text-black font-bold w-8 h-8 flex items-center justify-center app-border-strong app-rounded-sm app-pressable-brightness app-transition-fast"
     >
       ✕
     </button>

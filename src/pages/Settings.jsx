@@ -36,7 +36,7 @@ export default function Settings() {
 							key={row.id}
 							type="button"
 							onClick={() => row.setCommand(!row.value)}
-							className="w-full bg-white border-2 border-black rounded px-4 py-3 flex items-center justify-between cursor-pointer transition hover:brightness-95 active:brightness-90 focus-visible:outline-2 focus-visible:outline-black"
+							className="w-full bg-white px-4 py-3 flex items-center justify-between app-border-strong app-rounded-md app-interactive-surface app-focus-outline"
 							aria-label={`Toggle ${row.title}`}
 							aria-pressed={row.value}
 						>

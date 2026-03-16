@@ -14,7 +14,7 @@ export default function TitleWithBack({ backTo = '/maplist' }) {
         <button
           type="button"
           onClick={() => navigate(backTo)}
-          className="absolute right-6 top-1/2 -translate-y-1/2 text-black transition-colors hover:text-zinc-700 active:text-zinc-600"
+          className="absolute right-6 top-1/2 -translate-y-1/2 text-black app-transition-fast hover:text-zinc-700 active:text-zinc-600"
           aria-label="Go back"
         >
           <ArrowLeftCircleIcon className="w-13 h-13" />
@@ -23,7 +23,7 @@ export default function TitleWithBack({ backTo = '/maplist' }) {
           <button
             type="button"
             onClick={() => navigate('/maplist')}
-            className="rounded-lg px-3 py-1 cursor-pointer transition hover:bg-black/5 active:bg-black/10 focus-visible:outline-2 focus-visible:outline-black"
+            className="px-3 py-1 cursor-pointer hover:bg-black/5 active:bg-black/10 app-rounded-lg app-transition-fast app-focus-outline"
             aria-label="Go to home"
           >
             <span className="flex items-end justify-center gap-2">
