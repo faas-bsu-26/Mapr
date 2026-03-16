@@ -15,6 +15,7 @@ function App() {
             <Route path="/save" element={<Save />} />
             <Route path="/maplist" element={<MapList />} />
             <Route path="/map/:mapName" element={<MapView />} />
+            <Route path="/map" element={<MapView />} />
           </Routes>
         </div>
       </div>
