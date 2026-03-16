@@ -368,13 +368,18 @@ export default function MapView() {
 							<Cog6ToothIcon className="w-6 h-6" />
 						</button>
 						{showCompass && (
-							<div className="absolute left-3 bottom-3 w-12 h-12 rounded-full border-2 border-black bg-white/90 text-black pointer-events-none">
-								<div className="absolute left-1/2 top-4 bottom-4 w-px bg-black -translate-x-1/2" />
-								<div className="absolute top-1/2 left-4 right-4 h-px bg-black -translate-y-1/2" />
-								<div className="absolute left-1/2 top-0 -translate-x-1/2 text-[10px] font-bold">N</div>
-								<div className="absolute right-1 top-1/2 -translate-y-1/2 text-[10px] font-bold">E</div>
-								<div className="absolute left-1/2 bottom-0 -translate-x-1/2 text-[10px] font-bold">S</div>
-								<div className="absolute left-1 top-1/2 -translate-y-1/2 text-[10px] font-bold">W</div>
+							<div className="absolute left-3 bottom-3 pointer-events-none select-none flex flex-col items-center gap-1">
+								<div className="relative w-12 h-12 rounded-full border border-black/40 bg-white/55 text-black/80">
+									<div className="absolute left-1/2 top-4 bottom-4 w-px bg-black/70 -translate-x-1/2" />
+									<div className="absolute top-1/2 left-4 right-4 h-px bg-black/70 -translate-y-1/2" />
+									<div className="absolute left-1/2 top-0 -translate-x-1/2 text-[10px] font-bold text-red-700">N</div>
+									<div className="absolute right-1 top-1/2 -translate-y-1/2 text-[10px] font-semibold">E</div>
+									<div className="absolute left-1/2 bottom-0 -translate-x-1/2 text-[10px] font-semibold">S</div>
+									<div className="absolute left-1 top-1/2 -translate-y-1/2 text-[10px] font-semibold">W</div>
+								</div>
+								<span className="px-1.5 py-0.5 rounded bg-black/35 text-white text-[8px] font-semibold uppercase tracking-[0.08em]">
+									Compass
+								</span>
 							</div>
 						)}
 						{routePoints.length > 1 && (
