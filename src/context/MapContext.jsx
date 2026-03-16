@@ -4,6 +4,7 @@ export const MapContext = createContext();
 
 export function MapProvider({ children }) {
   const [maps, setMaps] = useState({});
+  const [showCompass, setShowCompass] = useState(true);
 
   const addMap = (name, image) => {
     setMaps((prevMaps) => ({
@@ -22,6 +23,8 @@ export function MapProvider({ children }) {
 
   const value = {
     maps,
+    showCompass,
+    setShowCompass,
     addMap,
     deleteMap
   };
