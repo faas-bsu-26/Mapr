@@ -33,10 +33,17 @@ export default function MapList() {
         {Object.entries(maps).reverse().map(([name]) => (
           <div
             key={name}
-            onClick={() => handleOpenMap(name)}
-            className="bg-white border-2 border-black rounded px-4 py-3 flex items-center justify-between cursor-pointer transition hover:brightness-90 active:brightness-75"
+            className="bg-white border-2 border-black rounded p-2 flex items-center gap-2 shadow-[0_2px_0_0_#000] transition hover:-translate-y-0.5 hover:shadow-[0_4px_0_0_#000]"
           >
-            <p className="text-black font-semibold">{name}</p>
+            <button
+              type="button"
+              onClick={() => handleOpenMap(name)}
+              className="flex-1 min-w-0 rounded px-2 py-2 flex items-center justify-between gap-2 cursor-pointer transition hover:bg-sky-100 active:bg-sky-200 focus-visible:outline-2 focus-visible:outline-black"
+              aria-label={`Open map ${name}`}
+            >
+              <span className="text-black font-semibold truncate text-left">{name}</span>
+              <span className="text-black/70 text-sm font-medium whitespace-nowrap">Open map ←</span>
+            </button>
             <DeleteButton mapName={name} />
           </div>
         ))}
