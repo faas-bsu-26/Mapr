@@ -15,7 +15,7 @@ export default function Save() {
 
     if (trimmedName === '') {
       setError('Please enter a map name');
-    } else if (trimmedName.length >= 14) {
+    } else if (trimmedName.length > 13) {
       setError('Map name must be 13 characters or fewer');
     } else if (Object.prototype.hasOwnProperty.call(maps, trimmedName)) {
       setError('A map with that name already exists');

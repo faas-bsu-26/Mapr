@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/mapr/',
+  base: '/Mapr/',
   plugins: [react(), tailwindcss()],
 })
